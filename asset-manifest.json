@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Expense-Tracker-App-Project/static/css/main.b4a630c8.css",
-    "main.js": "/Expense-Tracker-App-Project/static/js/main.13943028.js",
+    "main.css": "/Expense-Tracker-App-Project/static/css/main.d47e577b.css",
+    "main.js": "/Expense-Tracker-App-Project/static/js/main.cd7df6a0.js",
     "static/js/453.588ecfcc.chunk.js": "/Expense-Tracker-App-Project/static/js/453.588ecfcc.chunk.js",
     "static/media/couple-happy.png": "/Expense-Tracker-App-Project/static/media/couple-happy.7b8413bdbd40263d05fd.png",
     "static/media/user1.jpg": "/Expense-Tracker-App-Project/static/media/user1.c747f711a8b2ebc195bb.jpg",
@@ -17,12 +17,12 @@
     "static/media/angle-arrow-down.svg": "/Expense-Tracker-App-Project/static/media/angle-arrow-down.ae5f080741c0629ce9801700264eaa20.svg",
     "static/media/search.svg": "/Expense-Tracker-App-Project/static/media/search.04a7f16ea0b4cb60f1f4e5f0c1d07b10.svg",
     "static/media/check.svg": "/Expense-Tracker-App-Project/static/media/check.dfaa12b95f8abc65618168145274ab50.svg",
-    "main.b4a630c8.css.map": "/Expense-Tracker-App-Project/static/css/main.b4a630c8.css.map",
-    "main.13943028.js.map": "/Expense-Tracker-App-Project/static/js/main.13943028.js.map",
+    "main.d47e577b.css.map": "/Expense-Tracker-App-Project/static/css/main.d47e577b.css.map",
+    "main.cd7df6a0.js.map": "/Expense-Tracker-App-Project/static/js/main.cd7df6a0.js.map",
     "453.588ecfcc.chunk.js.map": "/Expense-Tracker-App-Project/static/js/453.588ecfcc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4a630c8.css",
-    "static/js/main.13943028.js"
+    "static/css/main.d47e577b.css",
+    "static/js/main.cd7df6a0.js"
   ]
 }
