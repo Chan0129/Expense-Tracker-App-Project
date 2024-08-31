@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const initialDate = () => {
   const date = new Date();
   const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0"); // Pad month with leading zero
-  const day = String(date.getDate()).padStart(2, "0"); // Pad day with leading zero
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 };
 
@@ -16,11 +16,11 @@ const DateInput = () => {
       <p className="pb-3">Date</p>
       <input
         type="date"
-        className={`bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 text-neutral-500 w-full custom-input-icon`}
+        className="bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 text-neutral-500 w-full custom-input-icon"
         name="date"
         id="date"
         value={date}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={e => setDate(e.target.value)}
       />
     </label>
   );

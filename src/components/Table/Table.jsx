@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import edit from "../../assets/edit-2.svg";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import ButtonWithIcon from "../Buttons/ButtonWithIcon";
-import { deleteTransaction, refreshUser } from "../../redux/authOperations";
-import { useDispatch } from "react-redux";
+import edit from '../../assets/edit-2.svg';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import ButtonWithIcon from '../Buttons/ButtonWithIcon';
+import { deleteTransaction, refreshUser } from '../../redux/authOperations';
+import { useDispatch } from 'react-redux';
 
 const Table = ({ data, handleOpenModal }) => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Table = ({ data, handleOpenModal }) => {
     });
   };
   return (
-    <div className=" pt-5 h-[350px] w-full ">
+    <div className="animate-fadeIn pt-5 h-[350px] w-full ">
       <div className="h-[350px] min-w-full text-left text-sm font-light text-white grid grid-rows-[auto_1fr] overflow-x-auto ">
         {/* Header */}
         <div className="bg-neutral-950 description grid sm:grid-cols-6 lg:grid-cols-7 text-lg sm:w-[600px] md:w-full md:px-0 md:mx-0 sm:px=5">
@@ -42,7 +42,7 @@ const Table = ({ data, handleOpenModal }) => {
 
         {/* Table Body */}
         <div className="pb-5 h-[260px] scrollbar-thin scrollbar-thumb-neutral-500 scrollbar-track-neutral-800 overflow-hidden hover:overflow-y-auto">
-          {data.map((item) => (
+          {data.map(item => (
             <div key={item._id} className="grid sm:grid-cols-6 lg:grid-cols-7 ">
               <div className="lg:px-10 lg:pl-10 py-[15px] truncate text-center">
                 {item.category.categoryName}

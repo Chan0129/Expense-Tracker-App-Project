@@ -1,25 +1,25 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { FiUser, FiLogOut } from "react-icons/fi";
-import PropTypes from "prop-types";
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { FiUser, FiLogOut } from 'react-icons/fi';
+import PropTypes from 'prop-types';
 
-import { logOut } from "../../redux/authOperations";
-import { Notify } from "notiflix";
+import { logOut } from '../../redux/authOperations';
+import { Notify } from 'notiflix';
 
-import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 export default function DropdownButton({ toggleModal }) {
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.auth.user.name);
-  const avatar = useSelector((state) => {
+  const user = useSelector(state => state.auth.user.name);
+  const avatar = useSelector(state => {
     return state.auth.user.avatarUrl;
   });
 
   const handleLogout = () => {
     dispatch(logOut());
-    Notify.success("Goodbye!");
+    Notify.success('Goodbye!');
   };
 
   return (

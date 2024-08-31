@@ -1,30 +1,30 @@
-import React from "react";
-import HeroImage from "../HeroImage/HeroImage";
-import InputBox from "../InputBox/InputBox";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import { Link } from "react-router-dom";
+import React from 'react';
+import HeroImage from '../HeroImage/HeroImage';
+import InputBox from '../InputBox/InputBox';
+import PrimaryButton from '../Buttons/PrimaryButton';
+import { Link } from 'react-router-dom';
 
-import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/authOperations";
-import { Notify } from "notiflix";
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/authOperations';
+import { Notify } from 'notiflix';
 
 const SignIn = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     const form = e.currentTarget;
 
     const formData = new FormData(form);
 
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const email = formData.get('email');
+    const password = formData.get('password');
 
     dispatch(logIn({ email, password }));
 
     if (!email || !password) {
-      Notify.failure("Please fill in all the fields!");
+      Notify.failure('Please fill in all the fields!');
       return;
     }
 
@@ -32,7 +32,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 mt-12 gap-10 lg:w-full lg:px-0 md:px-20 place-content-center">
+    <div className="animate-fadeIn grid lg:grid-cols-2 mt-12 gap-10 lg:w-full lg:px-0 md:px-20 place-content-center">
       <div className="lg:flex sm:hidden">
         <HeroImage />
       </div>
@@ -72,7 +72,7 @@ const SignIn = () => {
           <div className="flex flex-col gap-5 items-start pt-[139px]">
             <PrimaryButton title="Sign In" icon="" />
             <p className="text-neutral-400">
-              Already have account?{" "}
+              Already have account?{' '}
               <span className="text-neutral-200 underline underline-offset-4">
                 <Link to="/signup">Sign Up</Link>
               </span>

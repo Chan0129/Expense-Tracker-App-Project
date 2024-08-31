@@ -1,6 +1,6 @@
-import React from "react";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import SecondaryButton from "../Buttons/SecondaryButton";
+import React from 'react';
+import PrimaryButton from '../Buttons/PrimaryButton';
+import SecondaryButton from '../Buttons/SecondaryButton';
 
 const LogoutModal = () => {
   return (

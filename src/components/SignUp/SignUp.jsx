@@ -1,25 +1,23 @@
-import React from "react";
-import HeroImage from "../HeroImage/HeroImage";
-import InputBox from "../InputBox/InputBox";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import { Link } from "react-router-dom";
-
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/authOperations";
+import React from 'react';
+import HeroImage from '../HeroImage/HeroImage';
+import InputBox from '../InputBox/InputBox';
+import PrimaryButton from '../Buttons/PrimaryButton';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/authOperations';
 
 const SignUp = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     const form = e.currentTarget;
-
     const formData = new FormData(form);
 
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const password = formData.get('password');
 
     console.log(name, email, password);
 
@@ -36,14 +34,12 @@ const SignUp = () => {
 
       <section className="lg:pt-0 md:pt-10 md:w-[399px] sm:w-[335px]">
         <div>
-          <div>
-            <h1>Sign Up</h1>
-            <p className="description pb-10 pt-6">
-              Step into a world of hassle-free expense management! Your journey{" "}
-              <br />
-              towards financial mastery begins here.
-            </p>
-          </div>
+          <h1>Sign Up</h1>
+          <p className="description pb-10 pt-6">
+            Step into a world of hassle-free expense management! Your journey{' '}
+            <br />
+            towards financial mastery begins here.
+          </p>
         </div>
 
         <form action="" onSubmit={handleSubmit}>
@@ -70,7 +66,6 @@ const SignUp = () => {
               backgroundColor="bg-[#0C0D0D]"
               name="password"
               title=""
-              filter="text-white"
               textColor="text-white"
             />
           </div>
@@ -78,7 +73,7 @@ const SignUp = () => {
           <div className="flex flex-col gap-5 items-start">
             <PrimaryButton title="Sign Up" icon="" />
             <p className="text-neutral-400">
-              Already have account?{" "}
+              Already have an account?{' '}
               <span className="text-neutral-200 underline underline-offset-4">
                 <Link to="/signin">Sign In</Link>
               </span>

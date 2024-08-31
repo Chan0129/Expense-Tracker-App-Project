@@ -1,28 +1,28 @@
-import FinanceWidget from "../HeroImage/FinanceWidget";
-import arrowIcon from "../../assets/arrow-icon.svg";
-import arrowDownIcon from "../../assets/angle-arrow-down.svg";
-import ExpenseChart from "../ExpenseChart/ExpenseChart";
-import TransactionForm from "../TransactionForm/TransactionForm";
-import CategoriesModal from "../Modals/CategoriesModal";
-import UserSetsModal from "../Modals/UserSetsModal";
-import { Notify } from "notiflix";
+import FinanceWidget from '../HeroImage/FinanceWidget';
+import arrowIcon from '../../assets/arrow-icon.svg';
+import arrowDownIcon from '../../assets/angle-arrow-down.svg';
+import ExpenseChart from '../ExpenseChart/ExpenseChart';
+import TransactionForm from '../TransactionForm/TransactionForm';
+import CategoriesModal from '../Modals/CategoriesModal';
+import UserSetsModal from '../Modals/UserSetsModal';
+import { Notify } from 'notiflix';
 
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { useSelector, useDispatch } from "react-redux";
-import { refreshUser } from "../../redux/authOperations";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { refreshUser } from '../../redux/authOperations';
 
 const Dashboard = ({ showModal, toggleModal }) => {
-  const [categoryInput, setCategoryInput] = useState("");
-  const [selectedTransactionType, setSelectedTransactionType] = useState("");
-  const [chartType, setChartType] = useState("expenses");
+  const [categoryInput, setCategoryInput] = useState('');
+  const [selectedTransactionType, setSelectedTransactionType] = useState('');
+  const [chartType, setChartType] = useState('expenses');
   // Toggle Categories Expense Modal
   const [showCategoriesExpenseModal, setShowCategoriesExpenseModal] =
     useState(false);
   // Toggle Categories Incomes Modal
   const [showCategoriesIncomeModal, setShowCategoriesIncomeModal] =
     useState(false);
-  const [categoryId, setCategoryId] = useState("");
+  const [categoryId, setCategoryId] = useState('');
 
   const dispatch = useDispatch();
 
@@ -31,12 +31,12 @@ const Dashboard = ({ showModal, toggleModal }) => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  const expenseTotal = useSelector((state) => {
+  const expenseTotal = useSelector(state => {
     return state.auth.user.transactionsTotal.expenses;
   });
 
   const incomeTotal = useSelector(
-    (state) => state.auth.user.transactionsTotal.incomes
+    state => state.auth.user.transactionsTotal.incomes
   );
 
   // TOGGLE EXPENSE CATEGORIES MODAL
@@ -50,22 +50,22 @@ const Dashboard = ({ showModal, toggleModal }) => {
   };
 
   // Update the state when a radio button is selected
-  const handleRadioChange = (e) => {
+  const handleRadioChange = e => {
     setSelectedTransactionType(e.target.value);
   };
 
   // TRIGGERS TO OPEN THE MODAL FOR CATEGORY
   const handleCategoryClick = () => {
-    if (selectedTransactionType === "") {
-      Notify.warning("Please select a transaction type");
+    if (selectedTransactionType === '') {
+      Notify.warning('Please select a transaction type');
       return;
     }
 
-    if (selectedTransactionType === "expenses") {
+    if (selectedTransactionType === 'expenses') {
       setShowCategoriesExpenseModal(true);
     }
 
-    if (selectedTransactionType === "incomes") {
+    if (selectedTransactionType === 'incomes') {
       setShowCategoriesIncomeModal(true);
     }
   };
@@ -74,17 +74,17 @@ const Dashboard = ({ showModal, toggleModal }) => {
   const handleCategorySelection = (categoryName, _id, title) => {
     setCategoryInput(categoryName);
     setCategoryId(_id);
-    if (title === "Expenses") {
+    if (title === 'Expenses') {
       toggleModalExpense();
     }
 
-    if (title === "Incomes") {
+    if (title === 'Incomes') {
       toggleModalIncome();
     }
   };
 
   return (
-    <main className="flex lg:flex-row sm:flex-col lg:gap-9 md:gap-1">
+    <main className="animate-fadeIn flex lg:flex-row sm:flex-col lg:gap-9 md:gap-1">
       {showCategoriesExpenseModal && (
         <CategoriesModal
           title="Expenses"
