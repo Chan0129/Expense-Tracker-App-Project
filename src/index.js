@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/expense-tracker-03">
+        <BrowserRouter basename="/Expense-Tracker-App-Project">
           <App />
         </BrowserRouter>
       </PersistGate>

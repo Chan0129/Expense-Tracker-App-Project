@@ -1,0 +1,62 @@
+/* Home.module.css */
+
+.container {
+  animation: fadeIn; /* Assuming you have a fadeIn animation defined */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 3rem;
+  gap: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  order: 2;
+}
+
+.expenseLog {
+  color: #737373; /* text-neutral-500 */
+  font-size: 15px;
+}
+
+.heading {
+  color: #22c55e; /* text-green-400 */
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+}
+
+.description {
+  color: #737373; /* text-neutral-500 */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.usersContainer {
+  display: none;
+}
+
+.userImages {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-right: -10px;
+}
+
+.userCount {
+  font-size: 1.5rem;
+}
+
+.trustedText {
+  color: #737373; /* text-neutral-500 */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

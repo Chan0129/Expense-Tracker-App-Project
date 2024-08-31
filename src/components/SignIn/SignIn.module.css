@@ -1,0 +1,74 @@
+/* SignIn.module.css */
+.container {
+  animation: fadeIn;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+  gap: 2.5rem;
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.heroImageContainer {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .heroImageContainer {
+    display: flex;
+  }
+}
+
+.section {
+  padding-top: 2.5rem;
+  width: 335px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    width: 399px;
+    padding-top: 10rem;
+  }
+}
+
+.heading {
+  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 4.5rem;
+  width: 399px;
+  margin: 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-top: 8.75rem;
+}
+
+.linkText {
+  color: #a3a3a3;
+}
+
+.signUpLink {
+  color: #e5e5e5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
