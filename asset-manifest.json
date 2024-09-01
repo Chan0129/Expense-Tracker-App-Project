@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/Expense-Tracker-App-Project/static/css/main.d47e577b.css",
-    "main.js": "/Expense-Tracker-App-Project/static/js/main.cd7df6a0.js",
+    "main.css": "/Expense-Tracker-App-Project/static/css/main.a18438ec.css",
+    "main.js": "/Expense-Tracker-App-Project/static/js/main.cae3f1c9.js",
     "static/js/453.588ecfcc.chunk.js": "/Expense-Tracker-App-Project/static/js/453.588ecfcc.chunk.js",
     "static/media/couple-happy.png": "/Expense-Tracker-App-Project/static/media/couple-happy.7b8413bdbd40263d05fd.png",
     "static/media/user1.jpg": "/Expense-Tracker-App-Project/static/media/user1.c747f711a8b2ebc195bb.jpg",
     "static/media/user3.jpg": "/Expense-Tracker-App-Project/static/media/user3.f2616320e9a7f5c00892.jpg",
     "static/media/user2.jpg": "/Expense-Tracker-App-Project/static/media/user2.77b7828b8086fe6ec514.jpg",
-    "static/media/ph_user-bold.svg": "/Expense-Tracker-App-Project/static/media/ph_user-bold.5bb07b4c5642ed73dd09400cce416fea.svg",
     "static/media/Icon.svg": "/Expense-Tracker-App-Project/static/media/Icon.395d44c1010b9f0b57b89877eaaec7cc.svg",
     "static/media/trash-2.svg": "/Expense-Tracker-App-Project/static/media/trash-2.a370a92aea988a29439685ca97e03568.svg",
     "index.html": "/Expense-Tracker-App-Project/index.html",
@@ -17,12 +16,12 @@
     "static/media/angle-arrow-down.svg": "/Expense-Tracker-App-Project/static/media/angle-arrow-down.ae5f080741c0629ce9801700264eaa20.svg",
     "static/media/search.svg": "/Expense-Tracker-App-Project/static/media/search.04a7f16ea0b4cb60f1f4e5f0c1d07b10.svg",
     "static/media/check.svg": "/Expense-Tracker-App-Project/static/media/check.dfaa12b95f8abc65618168145274ab50.svg",
-    "main.d47e577b.css.map": "/Expense-Tracker-App-Project/static/css/main.d47e577b.css.map",
-    "main.cd7df6a0.js.map": "/Expense-Tracker-App-Project/static/js/main.cd7df6a0.js.map",
+    "main.a18438ec.css.map": "/Expense-Tracker-App-Project/static/css/main.a18438ec.css.map",
+    "main.cae3f1c9.js.map": "/Expense-Tracker-App-Project/static/js/main.cae3f1c9.js.map",
     "453.588ecfcc.chunk.js.map": "/Expense-Tracker-App-Project/static/js/453.588ecfcc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d47e577b.css",
-    "static/js/main.cd7df6a0.js"
+    "static/css/main.a18438ec.css",
+    "static/js/main.cae3f1c9.js"
   ]
 }
