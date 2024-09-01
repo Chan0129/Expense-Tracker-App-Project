@@ -1,15 +1,13 @@
-import React from "react";
-import DropdownButton from "../Buttons/DropdownButton";
-import UseToggle from "../../Hook/UseToggle";
-import UserSetsModal from "./UserSetsModal";
+import React from 'react';
+import DropdownButton from '../Btn/DropdownButton';
+import UseToggle from '../../Hook/UseToggle';
+import UserSetsModal from './UserSetsModal';
 
-import { NavLink } from "react-router-dom";
-
+import { NavLink } from 'react-router-dom';
 const SideBar = ({ setShowSidebar }) => {
   const { showModal, toggleModal } = UseToggle();
 
   const handleCloseButton = () => {
-    
     setShowSidebar(false);
   };
 

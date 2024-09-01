@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from '../HeroImage/HeroImage';
-import InputBox from '../InputBox/InputBox';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import InputBox from '../Inputs/InputBox';
+import PrimaryButton from '../Btn/PrimaryButton';
 import { Link } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
@@ -53,7 +53,6 @@ const SignIn = () => {
             <InputBox
               type="email"
               placeholder="Email"
-              border="border-[#0EF387]"
               backgroundColor="bg-[#0C0D0D]"
               name="email"
               title=""
@@ -72,8 +71,8 @@ const SignIn = () => {
           <div className="flex flex-col gap-5 items-start pt-[139px]">
             <PrimaryButton title="Sign In" icon="" />
             <p className="text-neutral-400">
-              Already have account?{' '}
-              <span className="text-neutral-200 underline underline-offset-4">
+              Already have an account?{' '}
+              <span className="text-neutral-200 underline underline-offset-4 hover:text-custom-green">
                 <Link to="/signup">Sign Up</Link>
               </span>
             </p>

@@ -9,13 +9,14 @@ import { Notify } from 'notiflix';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+// Import default profile image
+import defaultProfile from '../../assets/default-profile.png';
+
 export default function DropdownButton({ toggleModal }) {
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.auth.user.name);
-  const avatar = useSelector(state => {
-    return state.auth.user.avatarUrl;
-  });
+  const avatar = useSelector(state => state.auth.user.avatarUrl);
 
   const handleLogout = () => {
     dispatch(logOut());
@@ -26,7 +27,12 @@ export default function DropdownButton({ toggleModal }) {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <MenuButton className="flex items-center w-full justify-center gap-x-1.5  bg-neutral-900 px-3 py-2 text-sm font-semibold text-neutral-500 shadow-sm ring-inset border-none hover:bg-slate-800 rounded-3xl">
-          <img src={avatar} alt="" className="w-8 h-8 rounded-2xl mx-1" />
+          {/* Use defaultProfile as a fallback if avatar is not available */}
+          <img
+            src={avatar || defaultProfile}
+            alt="User Avatar"
+            className="w-8 h-8 rounded-2xl mx-1"
+          />
           {user}
           <ChevronDownIcon
             aria-hidden="true"

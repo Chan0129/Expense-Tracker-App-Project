@@ -1,18 +1,18 @@
-import MainHeader from "../components/Header/MainHeader";
-import { useLocation } from "react-router-dom";
-import AllExpenseTab from "../components/Tabs/AllExpenseTab";
-import AllIncomeTab from "../components/Tabs/AllIncomeTab";
+import MainHeader from '../components/Header/MainHeader';
+import { useLocation } from 'react-router-dom';
+import AllExpenseTab from '../components/Label/AllExpenseTab';
+import AllIncomeTab from '../components/Label/AllIncomeTab';
 
-import UseToggle from "../Hook/UseToggle";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { refreshUser } from "../redux/authOperations";
+import UseToggle from '../Hook/UseToggle';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from '../redux/authOperations';
 
 const AllExpensePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem('authToken');
     if (token) {
       dispatch(refreshUser());
     }
@@ -24,7 +24,7 @@ const AllExpensePage = () => {
   const { showModal, toggleModal } = UseToggle();
 
   const dynamicTab = () => {
-    if (pathname === "/all-expense") {
+    if (pathname === '/all-expense') {
       return (
         <AllExpenseTab
           title="All Expense"
@@ -33,7 +33,7 @@ const AllExpensePage = () => {
         />
       );
     }
-    if (pathname === "/all-income") {
+    if (pathname === '/all-income') {
       return (
         <AllIncomeTab
           title="All Income"

@@ -4,14 +4,14 @@ import arrowIcon from '../../assets/arrow-icon.svg';
 import arrowDownIcon from '../../assets/angle-arrow-down.svg';
 
 import PropTypes from 'prop-types';
-import SearchBar from '../InputBox/SearchBar';
-import Table from '../Table/Table';
+import SearchBar from '../Inputs/SearchBar';
+import Table from '../TablePage/Table';
 
-import TransactionFormModal from '../Modals/TransactionFormModal';
+import TransactionFormModal from '../Modal/TransactionFormModal';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getTransactions } from '../../redux/authOperations';
-import UserSetsModal from '../Modals/UserSetsModal';
+import UserSetsModal from '../Modal/UserSetsModal';
 
 const AllExpenseTab = ({ title, showModal, toggleModal }) => {
   const [showTransactionForm, setShowTransactionForm] = useState(false);

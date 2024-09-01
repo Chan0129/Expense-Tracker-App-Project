@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroImage from '../HeroImage/HeroImage';
-import InputBox from '../InputBox/InputBox';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import InputBox from '../Inputs/InputBox';
+import PrimaryButton from '../Btn/PrimaryButton';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/authOperations';
@@ -74,7 +74,7 @@ const SignUp = () => {
             <PrimaryButton title="Sign Up" icon="" />
             <p className="text-neutral-400">
               Already have an account?{' '}
-              <span className="text-neutral-200 underline underline-offset-4">
+              <span className="text-neutral-200 underline underline-offset-4 hover:text-custom-green">
                 <Link to="/signin">Sign In</Link>
               </span>
             </p>

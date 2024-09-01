@@ -1,13 +1,12 @@
-import PrimaryButton from "../Buttons/PrimaryButton";
-import CurrencyInputBox from "../InputBox/CurrencyInputBox";
-import RadioInput from "../InputBox/RadioInput";
-import TimeInput from "../InputBox/TimeInput";
-import DateInput from "../InputBox/DateInput";
-import PropTypes from "prop-types";
+import PrimaryButton from '../Btn/PrimaryButton';
+import CurrencyInputBox from '../Inputs/CurrencyInputBox';
+import RadioInput from '../Inputs/RadioInput';
+import TimeInput from '../Inputs/TimeInput';
+import DateInput from '../Inputs/DateInput';
+import PropTypes from 'prop-types';
 
-import { useDispatch } from "react-redux";
-
-import { createTransaction, refreshUser } from "../../redux/authOperations";
+import { useDispatch } from 'react-redux';
+import { createTransaction, refreshUser } from '../../redux/authOperations';
 
 const TransactionForm = ({
   handleCategoryClick,
@@ -18,18 +17,17 @@ const TransactionForm = ({
 }) => {
   const dispatch = useDispatch();
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
 
-    const date = formData.get("date");
-    const time = formData.get("time");
+    const date = formData.get('date');
+    const time = formData.get('time');
     const category = categoryId;
-    const sum = formData.get("sum");
-    const comment = formData.get("comment");
-    const type = formData.get("type");
+    const sum = formData.get('sum');
+    const comment = formData.get('comment');
+    const type = formData.get('type');
 
     const transaction = {
       date,
@@ -41,13 +39,11 @@ const TransactionForm = ({
     };
 
     dispatch(createTransaction(transaction));
-
     dispatch(refreshUser());
-
-    setCategoryInput("");
-
+    setCategoryInput('');
     e.target.reset();
   };
+
   return (
     <form action="" className="flex flex-col gap-5" onSubmit={handleSubmit}>
       <div className="flex items-center gap-5">
@@ -77,7 +73,7 @@ const TransactionForm = ({
           <input
             type="text"
             placeholder="Please choose or create a category"
-            className={`bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 text-neutral-500 w-full custom-input-icon`}
+            className="bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 text-neutral-500 w-full custom-input-icon hover:border-custom-green"
             name="category"
             id={categoryId}
             onClick={handleCategoryClick}
@@ -90,7 +86,7 @@ const TransactionForm = ({
           <p className="pb-3">Comment</p>
           <textarea
             placeholder="Enter the text"
-            className="bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 w-full text-neutral-500"
+            className="bg-neutral-900 border-2 border-neutral-500 p-3 rounded-xl placeholder:text-neutral-500 w-full text-neutral-500 custom-input-icon hover:border-custom-green"
             rows="3"
             name="comment"
           />
@@ -103,10 +99,12 @@ const TransactionForm = ({
   );
 };
 
-export default TransactionForm;
-
 TransactionForm.propTypes = {
   handleCategoryClick: PropTypes.func.isRequired,
   handleRadioChange: PropTypes.func.isRequired,
   categoryInput: PropTypes.string.isRequired,
+  categoryId: PropTypes.string.isRequired, // Added missing prop type
+  setCategoryInput: PropTypes.func.isRequired, // Added missing prop type
 };
+
+export default TransactionForm;

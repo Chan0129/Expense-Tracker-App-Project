@@ -1,10 +1,10 @@
 import FinanceWidget from '../HeroImage/FinanceWidget';
 import arrowIcon from '../../assets/arrow-icon.svg';
 import arrowDownIcon from '../../assets/angle-arrow-down.svg';
-import ExpenseChart from '../ExpenseChart/ExpenseChart';
+import ExpenseChart from 'components/Charts/ExpenseChart';
 import TransactionForm from '../TransactionForm/TransactionForm';
-import CategoriesModal from '../Modals/CategoriesModal';
-import UserSetsModal from '../Modals/UserSetsModal';
+import CategoriesModal from '../Modal/CategoriesModal';
+import UserSetsModal from '../Modal/UserSetsModal';
 import { Notify } from 'notiflix';
 
 import { useState, useEffect } from 'react';

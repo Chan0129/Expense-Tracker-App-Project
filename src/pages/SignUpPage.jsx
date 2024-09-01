@@ -1,14 +1,14 @@
-import InitialHeader from "../components/Header/Logo";
-import SignUp from "../components/SignUp/SignUp";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { refreshUser } from "../redux/authOperations";
+import InitialHeader from '../components/Header/Logo';
+import SignUp from '../components/SignUpPage/SignUp';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from '../redux/authOperations';
 
 const SignUpPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem('authToken');
     if (token) {
       dispatch(refreshUser());
     }

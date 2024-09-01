@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 const FinanceWidget = ({
   title,
@@ -17,31 +17,30 @@ const FinanceWidget = ({
   });
 
   const location = useLocation();
-
   const pathname = location.pathname;
 
-  const currency = useSelector((state) => state.auth.user.currency);
+  const currency = useSelector(state => state.auth.user.currency);
 
   let symbol;
 
-  if (currency === "uah") {
-    symbol = "₴";
-  } else if (currency === "usd") {
-    symbol = "$";
-  } else if (currency === "eur") {
-    symbol = "€";
+  if (currency === 'uah') {
+    symbol = '₴';
+  } else if (currency === 'usd') {
+    symbol = '$';
+  } else if (currency === 'eur') {
+    symbol = '€';
   }
 
   const handleClick = () => {
-    if (pathname !== "/dashboard") {
+    if (pathname !== '/dashboard') {
       return;
     }
-    if (title === "Total Expense") {
-      setChartType("expenses");
+    if (title === 'Total Expense') {
+      setChartType('expenses');
     }
 
-    if (title === "Total Income") {
-      setChartType("incomes");
+    if (title === 'Total Income') {
+      setChartType('incomes');
     }
   };
 
@@ -50,7 +49,7 @@ const FinanceWidget = ({
       <img
         src={src}
         alt="arrow-icon"
-        className="p-3 bg-green-400 rounded-xl w-[40px] mr-3"
+        className="p-3 bg-green-400 rounded-xl w-[40px] mr-3" // Changed to bg-green-400
       />
       <div className="leading-6">
         <p className="text-neutral-500 text-[14px]">{title}</p>
@@ -60,6 +59,8 @@ const FinanceWidget = ({
             {formattedExpense}
           </p>
           <p className="text-green-500 text-[13px] px-3 ml-3 rounded-xl bg-green-100 font-medium">
+            {' '}
+            {/* Changed text-green-500 and bg-green-100 */}
             {percentage}
           </p>
         </div>
@@ -68,8 +69,6 @@ const FinanceWidget = ({
   );
 };
 
-export default FinanceWidget;
-
 FinanceWidget.propTypes = {
   title: PropTypes.string.isRequired,
   percentage: PropTypes.string.isRequired,
@@ -77,4 +76,7 @@ FinanceWidget.propTypes = {
   styles: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
+  setChartType: PropTypes.func.isRequired, // Added missing prop type
 };
+
+export default FinanceWidget;

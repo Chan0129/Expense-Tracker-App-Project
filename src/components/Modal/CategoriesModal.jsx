@@ -1,63 +1,63 @@
-import CategoryList from "./CategoryList";
-import CloseButton from "../Buttons/CloseButton";
+import CategoryList from './CategoryList';
+import CloseButton from '../Btn/CloseButton';
 
-import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { createCategory, updateCategory } from "../../redux/authOperations";
-import { useState } from "react";
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { createCategory, updateCategory } from '../../redux/authOperations';
+import { useState } from 'react';
 
 const CategoriesModal = ({
   title,
   toggleModalExpense,
   handleCategorySelection,
 }) => {
-  const [newCategory, setNewCategory] = useState("");
-  const [buttonType, setButtonType] = useState("Add");
+  const [newCategory, setNewCategory] = useState('');
+  const [buttonType, setButtonType] = useState('Add');
   const [editingCategoryId, setEditingCategoryId] = useState(null);
 
   const dispatch = useDispatch();
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setNewCategory(e.target.value);
   };
 
   const handleButtonChange = (id, categoryName) => {
     setEditingCategoryId(id);
     setNewCategory(categoryName);
-    setButtonType("Edit");
+    setButtonType('Edit');
   };
 
   const handleCreateCategory = async () => {
-    if (newCategory.trim() === "") {
-      console.log("Category name cannot be empty");
+    if (newCategory.trim() === '') {
+      console.log('Category name cannot be empty');
       return;
     }
 
     try {
-      if (buttonType === "Add") {
+      if (buttonType === 'Add') {
         const result = await dispatch(
           createCategory({
             type: title.toLowerCase(), // "expenses" or "incomes"
             categoryName: newCategory,
           })
         ).unwrap();
-        console.log("Category created successfully:", result);
-      } else if (buttonType === "Edit" && editingCategoryId) {
+        console.log('Category created successfully:', result);
+      } else if (buttonType === 'Edit' && editingCategoryId) {
         const result = await dispatch(
           updateCategory({
             id: editingCategoryId,
             categoryName: newCategory,
           })
         ).unwrap();
-        console.log("Category updated successfully:", result);
+        console.log('Category updated successfully:', result);
       }
 
       // Clear the input field and reset the form state
-      setNewCategory("");
-      setButtonType("Add");
+      setNewCategory('');
+      setButtonType('Add');
       setEditingCategoryId(null);
     } catch (error) {
-      console.error("Failed to create or edit category:", error);
+      console.error('Failed to create or edit category:', error);
     }
   };
 

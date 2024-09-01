@@ -1,11 +1,11 @@
-import user1 from "../../assets/user1.jpg";
-import user2 from "../../assets/user2.jpg";
-import user3 from "../../assets/user3.jpg";
-import UserImage from "./UserImage";
-import HeroImage from "../HeroImage/HeroImage";
-import PrimaryButton from "../Buttons/PrimaryButton";
-import SecondaryButton from "../Buttons/SecondaryButton";
-import { Link } from "react-router-dom";
+import user1 from '../../assets/user1.jpg';
+import user2 from '../../assets/user2.jpg';
+import user3 from '../../assets/user3.jpg';
+import UserImage from './UserImage';
+import HeroImage from '../HeroImage/HeroImage';
+import PrimaryButton from '../Btn/PrimaryButton';
+import SecondaryButton from '../Btn/SecondaryButton';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         <div>
           <p className="text-neutral-500 text-[15px]">EXPENSE LOG</p>
           <h1>
-            Manage Your{" "}
+            Manage Your{' '}
             <span className="text-green-400 underline underline-offset-8 decoration-4">
               Finances
             </span>

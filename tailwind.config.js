@@ -3,18 +3,15 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     container: {
+      center: true, // Center the container by default
+      padding: '1rem', // Optional: Add some padding to the container
+    },
+    extend: {
       screens: {
         sm: '375px',
         md: '768px',
         lg: '1440px',
       },
-    },
-    screens: {
-      sm: '375px',
-      md: '768px',
-      lg: '1440px',
-    },
-    extend: {
       fontFamily: {
         suisse: ['"Suisse Intl"', 'sans-serif'],
       },
@@ -26,6 +23,9 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out',
+      },
+      colors: {
+        'custom-green': '#0EBB69', // Add custom green color
       },
     },
   },

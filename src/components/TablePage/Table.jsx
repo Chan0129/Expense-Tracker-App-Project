@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import edit from '../../assets/edit-2.svg';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import ButtonWithIcon from '../Buttons/ButtonWithIcon';
+import ButtonWithIcon from '../Btn/ButtonWithIcon';
 import { deleteTransaction, refreshUser } from '../../redux/authOperations';
 import { useDispatch } from 'react-redux';
 

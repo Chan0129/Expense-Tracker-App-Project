@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix';
-import userIcon from '../../assets/ph_user-bold.svg';
+import defaultProfile from '../../assets/default-profile.png'; // Updated import
 
-import SettingsButton from '../Buttons/SettingsButton';
-import CurrencyDropDown from '../InputBox/CurrencyDropDown';
+import SettingsButton from '../Btn/SettingsButton';
+import CurrencyDropDown from '../Inputs/CurrencyDropDown';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -13,7 +13,7 @@ import {
   removeAvatar,
   refreshUser,
 } from '../../redux/authOperations';
-import CloseButton from '../Buttons/CloseButton';
+import CloseButton from '../Btn/CloseButton';
 
 const extractAvatarId = avatarUrl => {
   const regex = /\/avatar\/([^]+)\.webp$/;
@@ -31,6 +31,10 @@ const UserSetsModal = ({ title, toggleModal }) => {
 
   const [newName, setNewName] = useState(userName);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log('Default Profile Image Path:', defaultProfile);
+  }, []);
 
   const handleAvatarUpload = file => {
     const formData = new FormData();
@@ -71,7 +75,7 @@ const UserSetsModal = ({ title, toggleModal }) => {
         console.error('Failed to remove avatar:', error);
       });
 
-    dispatch(updateAvatar(userIcon));
+    dispatch(updateAvatar(defaultProfile));
   };
 
   const handleOverlayClick = e => {
@@ -90,11 +94,18 @@ const UserSetsModal = ({ title, toggleModal }) => {
         <CloseButton toggleModal={toggleModal} />
         <p className="text-2xl pt-3">{title}</p>
         <div className="flex flex-col items-center pt-10">
-          <div className="h-[100px] w-[100px] bg-neutral-950 flex items-center justify-center rounded-full">
+          <div
+            className="h-[100px] w-[100px] flex items-center justify-center rounded-full"
+            style={{ backgroundColor: '#0C0D0D' }} // Updated background color
+          >
             <img
-              src={userAvatar || userIcon}
+              src={userAvatar || defaultProfile}
               alt="User Avatar"
               className="h-3/4 w-3/4 rounded-full object-contain"
+              onError={e => {
+                e.target.onerror = null;
+                e.target.src = defaultProfile;
+              }}
             />
           </div>
           <div className="flex gap-3 pt-7">

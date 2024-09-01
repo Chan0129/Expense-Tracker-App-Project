@@ -1,16 +1,16 @@
-import Dashboard from "../components/Dashboard/Dashboard";
-import MainHeader from "../components/Header/MainHeader";
+import Dashboard from '../components/Board/Dashboard';
+import MainHeader from '../components/Header/MainHeader';
 
-import UseToggle from "../Hook/UseToggle";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { refreshUser } from "../redux/authOperations";
+import UseToggle from '../Hook/UseToggle';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from '../redux/authOperations';
 
 const DashboardPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem('authToken');
     if (token) {
       dispatch(refreshUser());
     }

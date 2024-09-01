@@ -1,11 +1,11 @@
 import InitialHeader from './Logo';
-import SecondaryButton from '../../components/Buttons/SecondaryButton';
-import DropdownButton from '../../components/Buttons/DropdownButton';
+import SecondaryButton from '../../components/Btn/SecondaryButton';
+import DropdownButton from '../../components/Btn/DropdownButton';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { TfiLineDouble } from 'react-icons/tfi';
 import { useState } from 'react';
-import SideBar from '../Modals/SideBar';
+import SideBar from '../Modal/SideBar';
 
 const MainHeader = ({ toggleModal }) => {
   const [showSidebar, setShowSidebar] = useState(false);
